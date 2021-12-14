@@ -1,8 +1,8 @@
 <div class="p-5 mb-4 bg-light rounded-3">
   <div class="container-fluid py-5">
-    <h1 class="display-5 fw-bold">Welcome XXX Shop </h1>
+    <h1 class="display-5 fw-bold">Welcome SSS Shop </h1>
     <p class="col-md-8 fs-4">
-    I created the XXX shop project for Fazla Gida code challenge. The app has two user role. 1. User, 2. Seller. If you are a seller, you can create new shops and products. If you are a user,
+    I created the SSS shop project for Fazla Gida code challenge. The app has two user role. 1. User, 2. Seller. If you are a seller, you can create new shops and products. If you are a user,
     you can add products and shops to favorite list . Enjoy. 👋🏻 (Images always change. Remember that 👨🏼‍💻 )
     </p>
     <a class="btn btn-success btn-lg" target="_blank" href="https://github.com/codescaptain" type="button">My Github Profile <i class="bi bi-github"></i></a>
@@ -13,7 +13,7 @@
     <% @products.each do |product| %>
       <div class="col-3">
         <div class="card mt-3" style="width: 18rem;">
-            <img src="https://picsum.photos/300/300" style="box-shadow: 0 13px 27px -5px hsl(240deg 30% 28% / 25%);" class="img-fluid rounded m-3" alt="">
+            <img src="https://picsum.photos/id/<%=rand(1...100)%>/300/300" style="box-shadow: 0 13px 27px -5px hsl(240deg 30% 28% / 25%);" class="img-fluid rounded m-3" alt="">
           <div class="card-body">
             <h5 class="card-title"><%= product.name %></h5>
             <p class="card-text"><%= truncate(product.description, :length => 100) %></p>
