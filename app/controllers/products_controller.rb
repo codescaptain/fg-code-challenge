@@ -10,7 +10,10 @@ class ProductsController < ApplicationController
   end
 
   # GET /products/1 or /products/1.json
-  def show; end
+  def show
+    @is_product_fav = user_signed_in? ? ProductFavorite.check_product_fav(@product.id, current_user.id).any? : false
+    @favorite = ProductFavorite.new
+  end
 
   # GET /products/new
   def new

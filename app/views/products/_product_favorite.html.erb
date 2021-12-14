@@ -1,0 +1,12 @@
+<% if !current_seller %>
+  <% if @is_product_fav %>
+    <%= render "products/remove_fav_form"%>
+  <% else %>
+     <%= render "products/add_fav_form" %>
+  <% end %>
+<% end %>
+<script>
+  function clickSubmit() {
+    $("#add-fav").click()
+  }
+</script>

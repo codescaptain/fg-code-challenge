@@ -1,7 +1,4 @@
 <p id="notice"><%= notice %></p>
-
-
-
 <div class="container">
   <div class="row align-items-start">
     <div class="col-11 border">Seller: <%= @product.seller.username_from_email %></div>
@@ -12,8 +9,15 @@
     <div class="col-6 border mt-3">
      <h3 class="h3"><%= @product.name %> </h3>
      <p><%= @product.description %></p>
-     <!-- @todo if user added the product to favor list i class should be bi bi-hearth-fill -->
-     <p class="orange-400"><%= @product.amount %> TL   <i class="bi bi-heart" style="color:red;cursor:pointer;"></i> </p>
+
+     <p class="orange-400"><%= @product.amount %> TL </p>
+      <% if user_signed_in? %>
+       <p id="fav-form"><%= render "products/product_favorite", product_id: @product.id%></p>
+     <% elsif seller_signed_in? %>  
+       <p>You are a seller.🥲 
+      <% else %>
+       <p>Do you like it?🥲 <%= link_to "SignIn", new_user_session_path %> and add the product to favorite list</p>  
+     <% end %>
      <% if current_seller == @product.seller %>
       <%= link_to 'Edit', edit_product_path(@product) %> |
      <% end %>

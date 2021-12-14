@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  get 'product_favorites/index'
   resources :products
   resources :shops
+  resources :product_favorites
+
   root 'pages#welcome'
   devise_for :sellers, path: 'sellers', controllers: {
     sessions: 'sellers/sessions',

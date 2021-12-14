@@ -1,2 +1,18 @@
-<h1>Users::Dashboard#index</h1>
-<p>Find me in app/views/users/dashboard/index.html.erb</p>
+<h1>Hello👋🏻 Do you like products? Buy Now! Products </h1>
+<div class="container">
+  <div class="row">
+    <% @fav_products.each do |product| %>
+      <div class="col-3">
+        <div class="card mt-3" style="width: 18rem;">
+            <img src="https://picsum.photos/300/300" style="box-shadow: 0 13px 27px -5px hsl(240deg 30% 28% / 25%);" class="img-fluid rounded m-3" alt="">
+          <div class="card-body">
+            <h5 class="card-title"><%= product.name %></h5>
+            <p class="card-text"><%= truncate(product.description, :length => 100) %></p>
+            <%= link_to "Product Details", product_path(product), class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<h1>Hello👋🏻 Do you like shops?  Shops </h1>
