@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Shops</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Adress</th>
+      <th scope="col">Seller</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shops.each do |shop| %>
+      <tr>
+        <td><%= shop.name %></td>
+        <td><%= truncate(shop.description, :length => 35)%></td>
+        <td><%= shop.adress %></td>
+        <td><%= shop.seller.email %></td>
+        <td><%= link_to 'Show', shop, class: "btn btn-primary" %></td>
+        <td><%= link_to 'Edit', edit_shop_path(shop), class: "btn btn-warning" %></td>
+        <td><%= link_to 'Destroy', shop, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shop', new_shop_path, class: "btn btn-success mt-2 ms-1" %>

@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <div class="row">
+    <div class="card">
+      <div class="card-header">
+        Seller: <%= @shop.seller.email %>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"><%= @shop.name %></h5>
+        <p class="card-text">
+          <%= @shop.description %>
+        </p>
+        <p>
+          <b><%= @shop.adress %></b>
+        </p>
+        <a href="#" class="btn btn-primary">Go to seller's products</a>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex p-2 bd-highlight ">
+    <%= link_to 'Edit', edit_shop_path(@shop), class: "btn btn-primary" %> 
+    <%= link_to 'Back', shops_path, class: "btn btn-warning ms-1" %>
+  </div>
+</div>
+
