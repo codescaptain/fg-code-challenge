@@ -2,7 +2,6 @@
   <%= form.hidden_field :shop_id, value: @shop.id %>
   <!-- @todo if user added the product to favor list i class should be bi bi-hearth-fill -->
   <% if user_signed_in? %>
-    <i onclick="clickSubmit() " class="bi bi-heart" style="color:red;cursor:pointer;"></i> 
-    <%= form.submit 'Add Favorite', style: "display: none;", id: "add-fav" %>
+    <%= form.submit 'Add Favorite', id: "add-fav" %>
   <% end %>   
 <% end %>   
