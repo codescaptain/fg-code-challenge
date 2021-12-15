@@ -9,6 +9,8 @@
         <li class="nav-item">
         <% if user_signed_in? %>
           <%= link_to "Favorite List", users_authenticated_root_path, class: "nav-link active" %>
+        <% elsif seller_signed_in? %>
+           <%= link_to "Seller Dashboard", sellers_authenticated_root_path, class: "nav-link active" %> 
         <% end %>  
         </li>
         <li class="nav-item dropdown">

@@ -1,35 +1,3 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="h2 text-center">Products</h1>
-
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Description</th>
-      <th scope="col">Amount</th>
-      <th scope="col">Seller</th>
-      <th scope="col">Shop</th>
-      <th scope="col">Actions</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= product.description %></td>
-        <td><%= product.amount %></td>
-        <td><%= product.seller.email%></td>
-        <td><%= product.shop.name %></td>
-        <td><%= link_to 'Show', product, class: "btn btn-primary" %></td>
-        <td><%= link_to 'Edit', edit_product_path(product), class: "btn btn-warning" %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Product', new_product_path, class: "btn btn-success mt-2 ms-1"  %>
+<%= render "products/product_list" %>

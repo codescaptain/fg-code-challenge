@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get 'product_favorites/index'
   resources :products
   resources :shops
-  resources :product_favorites
+  resources :product_favorites, only: %i[create destroy]
+  resources :shop_favorites, only: %i[create destroy]
 
   root 'pages#welcome'
   devise_for :sellers, path: 'sellers', controllers: {

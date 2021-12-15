@@ -1,0 +1,7 @@
+<%= form_with(model: current_user.shop_favorites.find_by(shop_id: @shop.id ), html:{ method: :delete }, local: false) do |form|  %>
+    <!-- @todo if user added the product to favor list i class should be bi bi-hearth-fill -->
+    <% if user_signed_in? %>
+      <i onclick="clickSubmit() " class="bi bi-heart-fill" style="color:red;cursor:pointer;"></i> 
+      <%= form.submit 'Add Favorite', style: "display: none;", id: "add-fav" %>
+    <% end %> 
+<% end %>   

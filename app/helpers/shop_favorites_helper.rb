@@ -1,0 +1,2 @@
+module ShopFavoritesHelper
+end

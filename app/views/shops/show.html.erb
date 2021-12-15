@@ -14,13 +14,20 @@
         <p>
           <b><%= @shop.adress %></b>
         </p>
-        <a href="#" class="btn btn-primary">Go to seller's products</a>
+        <%= render "shops/shop_favorite_form" %>
       </div>
     </div>
   </div>
-  <div class="d-flex p-2 bd-highlight ">
-    <%= link_to 'Edit', edit_shop_path(@shop), class: "btn btn-primary" %> 
-    <%= link_to 'Back', shops_path, class: "btn btn-warning ms-1" %>
-  </div>
+  <% if current_seller && current_seller.id == @shop.seller.id %>
+    <div class="d-flex p-2 bd-highlight ">
+      <%= link_to 'Edit', edit_shop_path(@shop), class: "btn btn-primary" %> 
+      <%= link_to 'Back', shops_path, class: "btn btn-warning ms-1" %>
+    </div>
+  <% else %>  
+  <% end %>
 </div>
+
+<%= render "products/product_list" %>
+
+
 

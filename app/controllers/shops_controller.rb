@@ -9,7 +9,11 @@ class ShopsController < ApplicationController
   end
 
   # GET /shops/1 or /shops/1.json
-  def show; end
+  def show
+    @products = @shop.products
+    @is_shop_fav = user_signed_in? ? ShopFavorite.check_shop_fav(@shop.id, current_user.id).any? : false
+    @favorite = ShopFavorite.new
+  end
 
   # GET /shops/new
   def new

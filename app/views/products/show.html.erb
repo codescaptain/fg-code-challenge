@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row align-items-start">
     <div class="col-11 border">Seller: <%= @product.seller.username_from_email %></div>
-    <div class="col-11 border">Shop: <%= @product.shop.name%></div>
+    <div class="col-11 border">Shop: <%= link_to @product.shop.name, shop_path(@product.shop.id)%></div>
     <div class="col-5 border text-center">
       <img src="https://picsum.photos/id/<%=rand(1...100)%>/300/300" style="box-shadow: 0 13px 27px -5px hsl(240deg 30% 28% / 25%);" class="img-fluid rounded m-3" alt="">
     </div>
@@ -16,12 +16,12 @@
      <% elsif seller_signed_in? %>  
        <p>You are a seller.🥲 
       <% else %>
-       <p>Do you like it?🥲 <%= link_to "SignIn", new_user_session_path %> and add the product to favorite list</p>  
+       <p>Do you like it? <%= link_to "SignIn", new_user_session_path %> and add the product to favorite list</p>  
      <% end %>
      <% if current_seller == @product.seller %>
       <%= link_to 'Edit', edit_product_path(@product) %> |
      <% end %>
-     <%= link_to 'Back', products_path %>
+     <%= link_to 'All Products', root_path %>
     </div>
   </div>
 </div>

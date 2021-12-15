@@ -4,9 +4,8 @@ class Product < ApplicationRecord
   validates :amount, numericality: { greater_than: 0 }
 
   has_many :product_favorites
-  has_many :users, through: :users
+  has_many :users, through: :product_favorites
+
   belongs_to :seller
   belongs_to :shop
-
-
 end
